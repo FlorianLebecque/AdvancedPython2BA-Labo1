@@ -17,11 +17,11 @@ def fact(n):
 	if(n < 0):
 		return ValueError
 
-	v = 0
-	for i in range(0,n):
-		v *= n
+	v = 1
+	for i in range(1,n+1):
+		v *= i
 
-	return n
+	return v
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -55,7 +55,7 @@ def integrate(function, lower, upper):
 		to integrate given as a string.
 	"""
 	f = lambda x:eval(function)
-	return itg.quad(f,lower,upper)
+	return itg.quad(f,lower,upper)[0]
 
 
 if __name__ == '__main__':
